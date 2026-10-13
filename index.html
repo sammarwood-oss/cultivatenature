@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cultivate Nature</title>
-<meta name="description" content="Cultivating business models to support nature. We help nature ventures transition to being profitable and sustainable, and we get in and share the risk and the reward.">
+<meta name="description" content="Cultivating business models to support nature. Led by Sam Marwood. We help nature ventures become profitable and sustainable, and we are the concierge into nature for business.">
 <link rel="icon" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" sizes="192x192" href="assets/favicon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,54 +21,63 @@
     --hairline: #ddd5c4;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Archivo',sans-serif; color:var(--charcoal); background:var(--paper); font-size:17px; line-height:1.6; }
-  .wrap { max-width:980px; margin:0 auto; padding:0 20px; }
+  body { font-family:'Archivo',sans-serif; color:var(--charcoal); background:var(--paper); font-size:17.5px; line-height:1.65; }
+  .wrap { max-width:1020px; margin:0 auto; padding:0 22px; }
 
-  header { padding:26px 0; border-bottom:1px solid var(--hairline); }
+  header { padding:28px 0; }
   .brandline { display:flex; align-items:center; gap:14px; }
-  .brandline img { height:44px; }
-  .brandline span { font-weight:900; letter-spacing:2px; font-size:17px; color:var(--charcoal); }
+  .brandline img { height:46px; }
+  .brandline span { font-weight:900; letter-spacing:2.5px; font-size:17px; color:var(--charcoal); }
 
-  .hero { text-align:center; padding:64px 0 56px 0; }
-  .hero img { width:min(420px, 82vw); }
-  .hero h1 { font-size:clamp(26px, 4.6vw, 42px); font-weight:900; color:var(--pine); letter-spacing:-0.5px; margin-top:28px; }
-  .hero p.sub { max-width:640px; margin:18px auto 0 auto; font-size:clamp(17px,2.4vw,20px); font-weight:500; }
+  .hero { text-align:center; padding:72px 0 88px 0; }
+  .hero img { width:min(440px, 84vw); }
+  .hero h1 { font-size:clamp(28px, 5vw, 50px); font-weight:900; color:var(--pine); letter-spacing:-0.5px; margin-top:34px; line-height:1.12; }
+  .hero p.sub { max-width:660px; margin:22px auto 0 auto; font-size:clamp(17px,2.4vw,21px); font-weight:500; }
 
-  section { padding:56px 0; }
+  .statement { background:var(--pine); color:var(--cream); text-align:center; padding:60px 20px; }
+  .statement p { font-size:clamp(24px,4vw,40px); font-weight:900; letter-spacing:-0.5px; }
+  .statement span { color:#d9a05c; }
+
+  section { padding:76px 0; }
   .band-line { border-top:1px solid var(--hairline); }
-  h2 { font-size:14px; font-weight:900; letter-spacing:3px; color:var(--ochre); text-transform:uppercase; margin-bottom:22px; }
-  .lead { font-size:clamp(18px,2.6vw,22px); font-weight:600; color:var(--pine); max-width:820px; }
-  .body-copy { max-width:820px; margin-top:16px; }
-  .body-copy p { margin-bottom:14px; }
+  h2 { font-size:14px; font-weight:900; letter-spacing:3.5px; color:var(--ochre); text-transform:uppercase; margin-bottom:26px; }
+  .lead { font-size:clamp(19px,2.8vw,25px); font-weight:600; color:var(--pine); max-width:860px; line-height:1.45; }
 
-  .three { display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:10px; }
-  .three div { padding:26px 28px 26px 0; }
-  .three div + div { border-left:1px solid var(--hairline); padding-left:28px; }
-  .three h3 { font-size:17px; font-weight:900; color:var(--pine); margin-bottom:10px; }
-  .three p { font-size:15.5px; }
-  @media (max-width:760px) {
-    .three { grid-template-columns:1fr; }
-    .three div { padding:20px 0; border-left:none !important; padding-left:0 !important; border-top:1px solid var(--hairline); }
-    .three div:first-child { border-top:none; }
-  }
+  .offers { display:grid; grid-template-columns:repeat(3,1fr); gap:44px; margin-top:44px; }
+  .offers h3 { font-size:18px; font-weight:900; color:var(--pine); margin-bottom:12px; padding-top:16px; border-top:3px solid var(--ochre); }
+  .offers div:nth-child(2) h3 { border-top-color:var(--bush); }
+  .offers div:nth-child(3) h3 { border-top-color:var(--water); }
+  .offers p { font-size:16px; }
+  @media (max-width:800px) { .offers { grid-template-columns:1fr; gap:30px; } }
 
-  .building { background:var(--cream); }
-  .building ul { list-style:none; max-width:820px; }
-  .building li { padding:13px 0 13px 34px; border-bottom:1px solid var(--hairline); position:relative; font-weight:500; }
+  .how { background:var(--cream); }
+  .how-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:40px 56px; margin-top:10px; }
+  .how-grid h3 { font-size:18px; font-weight:900; color:var(--pine); margin-bottom:10px; }
+  .how-grid p { font-size:16px; }
+  @media (max-width:800px) { .how-grid { grid-template-columns:1fr; gap:28px; } }
+
+  .sam { display:grid; grid-template-columns:320px 1fr; gap:56px; align-items:center; }
+  .sam img { width:100%; display:block; }
+  .sam h2 { margin-bottom:14px; }
+  .sam .name { font-size:clamp(24px,3.4vw,34px); font-weight:900; color:var(--pine); margin-bottom:16px; }
+  @media (max-width:800px) { .sam { grid-template-columns:1fr; gap:28px; } .sam img { max-width:320px; } }
+
+  .building ul { list-style:none; max-width:860px; }
+  .building li { padding:14px 0 14px 36px; border-bottom:1px solid var(--hairline); position:relative; font-weight:500; }
   .building li:last-child { border-bottom:none; }
-  .building li::before { content:""; position:absolute; left:4px; top:21px; width:12px; height:12px; }
+  .building li::before { content:""; position:absolute; left:4px; top:23px; width:12px; height:12px; }
   .building li.d::before { background:var(--ochre); }
   .building li.b::before { background:var(--bush); }
   .building li.w::before { background:var(--water); }
 
-  .ask { background:var(--pine); color:var(--cream); text-align:center; padding:72px 0; }
-  .ask img { width:min(240px,60vw); margin-bottom:26px; }
+  .ask { background:var(--pine); color:var(--cream); text-align:center; padding:84px 0; }
+  .ask img { width:min(250px,60vw); margin-bottom:30px; }
   .ask h2 { color:#d9a05c; }
-  .ask p.big { font-size:clamp(20px,3.2vw,28px); font-weight:700; max-width:720px; margin:0 auto; }
-  .ask p.small { margin:20px auto 0 auto; max-width:640px; font-size:16px; }
-  .ask a { display:inline-block; margin-top:30px; background:var(--cream); color:var(--pine); font-weight:900; letter-spacing:1px; padding:15px 34px; text-decoration:none; }
+  .ask p.big { font-size:clamp(21px,3.4vw,30px); font-weight:700; max-width:760px; margin:0 auto; }
+  .ask p.small { margin:22px auto 0 auto; max-width:660px; font-size:16.5px; }
+  .ask a { display:inline-block; margin-top:34px; background:var(--cream); color:var(--pine); font-weight:900; letter-spacing:1px; padding:16px 38px; text-decoration:none; }
 
-  footer { padding:34px 0; font-size:14px; color:#8a7f78; }
+  footer { padding:36px 0; font-size:14px; color:#8a7f78; }
   footer .wrap { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
 </style>
 </head>
@@ -83,24 +92,39 @@
 
 <div class="hero wrap">
   <img src="assets/mark.png" alt="A tree growing from desert, bush and water">
-  <h1>Cultivating business models to support nature.</h1>
+  <h1>Cultivating business models<br>to support nature.</h1>
   <p class="sub">Nature in Australia runs on goodwill, and goodwill is running out. We put real business models underneath the people and places doing the work.</p>
 </div>
 
-<section class="band-line">
+<div class="statement">
+  <p>Put simply: <span>we help nature make money.</span></p>
+</div>
+
+<section>
   <div class="wrap">
     <h2>What we do</h2>
     <p class="lead">We help nature ventures transition to being profitable and sustainable. We get in and share the risk and the reward.</p>
-    <div class="body-copy">
-      <p>And we help businesses put real nature programs to work: products, partnerships and projects that are good for nature and good for business.</p>
+    <div class="offers">
+      <div>
+        <h3>For business</h3>
+        <p>We are your concierge into nature. Real programs, real places and real outcomes your customers can see, built from budgets you already spend.</p>
+      </div>
+      <div>
+        <h3>For nature ventures</h3>
+        <p>Wildlife parks, nature attractions and the ventures built on love. We bring the business model, the partners and the visitors, and we stay to oversee it working.</p>
+      </div>
+      <div>
+        <h3>For landholders</h3>
+        <p>When a much loved block or property needs a way forward, we transition ownership for longevity and purpose, and the land keeps its people and its future.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="band-line">
+<section class="how">
   <div class="wrap">
     <h2>How we work</h2>
-    <div class="three">
+    <div class="how-grid">
       <div>
         <h3>Skin in the game</h3>
         <p>We are not consultants watching from the sidelines. We get in, carry risk alongside the venture, and win only when it does.</p>
@@ -113,11 +137,27 @@
         <h3>Succession is our craft</h3>
         <p>When a founder needs a way forward, we transition ownership for longevity and purpose. We have spent a decade doing it for farms, and the nature sector needs it just as badly.</p>
       </div>
+      <div>
+        <h3>Modern methods, more outcomes</h3>
+        <p>We run lean with the newest tools and ways of working, so the work costs less and moves faster, and more of every dollar reaches the ground.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="building">
+<section class="band-line">
+  <div class="wrap sam">
+    <img src="assets/sam.jpg" alt="Sam Marwood">
+    <div>
+      <h2>Who we are</h2>
+      <div class="name">Led by Sam Marwood.</div>
+      <p>Sam has spent twenty years making the ventures people love stand on their own, across farming, conservation and technology. He knows what it takes to get nature businesses on track, and he leads a team that gets in, shares the risk, and stays for the long run.</p>
+      <p style="margin-top:14px;">First Nations partnership is part of how we work, not an add on.</p>
+    </div>
+  </div>
+</section>
+
+<section class="building band-line" style="background:var(--cream);">
   <div class="wrap">
     <h2>What we are building</h2>
     <ul>
@@ -126,7 +166,8 @@
       <li class="w">Virtual fencing that keeps wildlife off the roads, paid for by the people who save money when collisions never happen.</li>
       <li class="b">A program that backs the vets who treat injured wildlife for free, so doing the right thing stops costing them.</li>
       <li class="d">Stays where people meet nature, so the visit funds the place.</li>
-      <li class="w">Platforms that turn love of animals into visits, learning and funding for nature, week after week.</li>
+      <li class="w">New ways for people to own a piece of nature together, so the land is cared for and the carers are not alone.</li>
+      <li class="b">Platforms that turn love of animals into visits, learning and funding for nature, week after week.</li>
     </ul>
   </div>
 </section>
@@ -136,7 +177,7 @@
     <img src="assets/mark-keyline.png" alt="">
     <h2>Who we work with</h2>
     <p class="big">Bring us your venture, or bring us your company.</p>
-    <p class="small">If you run a nature venture that deserves a future, or a business that wants a real nature story instead of a borrowed one, we would love to talk. First Nations partnership is part of how we work, not an add on.</p>
+    <p class="small">If you run a nature venture that deserves a future, or a business that wants a real way into nature instead of a borrowed story, we would love to talk.</p>
     <a href="mailto:sam@cultivatefarms.com">Talk to Sam Marwood</a>
   </div>
 </section>
