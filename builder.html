@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Nature Business Builder — Cultivate Nature</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{--pine:#10382A;--charcoal:#4a3f3c;--ochre:#b06a2c;--bush:#2d5a2a;--water:#3f7d80;--cream:#F7F3E8;--paper:#fff;--hairline:#ddd5c4}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Archivo',sans-serif;color:var(--charcoal);background:var(--cream);font-size:17px;line-height:1.6}
+  .wrap{max-width:860px;margin:0 auto;padding:0 20px}
+  header{background:var(--pine);color:var(--cream);padding:22px 0}
+  header span{font-weight:900;letter-spacing:2.5px;font-size:15px}
+  .stage{padding:44px 0 72px}
+  h1{font-size:clamp(27px,4.6vw,42px);font-weight:900;color:var(--pine);line-height:1.1;letter-spacing:-0.5px}
+  .sub{margin-top:14px;font-size:clamp(16px,2.3vw,20px);font-weight:500;max-width:640px}
+  .eyebrow{font-size:13px;font-weight:900;letter-spacing:3px;color:var(--ochre);text-transform:uppercase;margin-bottom:16px}
+  .primary-doors{display:grid;grid-template-columns:1fr;gap:14px;margin-top:32px}
+  .door{background:var(--paper);border:1px solid var(--hairline);border-left:5px solid var(--ochre);border-radius:4px;padding:20px 22px;cursor:pointer;transition:transform .12s,box-shadow .12s;text-align:left;width:100%;display:block}
+  .door:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(16,56,42,.1)}
+  .door:nth-child(2){border-left-color:var(--bush)}
+  .door:nth-child(3){border-left-color:var(--water)}
+  .door h3{font-size:18px;font-weight:900;color:var(--pine);margin-bottom:4px}
+  .door p{font-size:14.5px}
+  .more-line{margin-top:26px;font-size:15px}
+  .more-line button{background:none;border:none;color:var(--ochre);font-family:inherit;font-weight:700;cursor:pointer;font-size:15px;padding:0}
+  .more-doors{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
+  @media(max-width:600px){.more-doors{grid-template-columns:1fr}}
+  .more-doors button{background:var(--paper);border:1px solid var(--hairline);border-radius:4px;padding:13px 15px;text-align:left;cursor:pointer;font-family:inherit;font-weight:700;color:var(--pine);font-size:14.5px}
+  .more-doors button:hover{border-color:var(--ochre)}
+  .q-card{background:var(--paper);border:1px solid var(--hairline);border-radius:6px;padding:30px;margin-top:22px}
+  .progress{height:6px;background:var(--hairline);border-radius:3px;overflow:hidden;margin-bottom:24px}
+  .bar{height:100%;background:var(--ochre);width:0;transition:width .25s}
+  .qnum{font-size:13px;font-weight:900;letter-spacing:2px;color:var(--ochre);text-transform:uppercase}
+  .q-card h2{font-size:clamp(20px,3vw,26px);font-weight:900;color:var(--pine);margin:10px 0 16px;line-height:1.25}
+  textarea{width:100%;min-height:110px;border:1px solid var(--hairline);border-radius:4px;padding:14px;font-family:inherit;font-size:16.5px;color:var(--charcoal);resize:vertical;background:#fdfcf8}
+  textarea:focus{outline:none;border-color:var(--ochre)}
+  .idk{margin-top:10px}
+  .idk button{background:none;border:none;color:#8a7f78;font-family:inherit;font-size:14px;cursor:pointer;text-decoration:underline;padding:0}
+  .req{color:var(--ochre);font-size:13px;font-weight:700;margin-top:8px;display:none}
+  .row{display:flex;justify-content:space-between;align-items:center;margin-top:22px;gap:12px;flex-wrap:wrap}
+  button.btn{font-family:inherit;font-weight:900;letter-spacing:.5px;border:none;border-radius:4px;cursor:pointer;font-size:15px;padding:13px 24px}
+  .pine{background:var(--pine);color:var(--cream)}
+  .ghost{background:transparent;color:var(--pine);border:1px solid var(--hairline);font-weight:700}
+  .link{background:none;border:none;color:var(--ochre);font-family:inherit;font-weight:700;cursor:pointer;padding:6px 0;font-size:15px}
+  .hidden{display:none}
+  .models{margin-top:8px;display:grid;gap:14px}
+  .model{background:var(--paper);border:1px solid var(--hairline);border-top:4px solid var(--bush);border-radius:4px;padding:18px 20px}
+  .model h4{font-size:17px;font-weight:900;color:var(--pine);margin-bottom:6px}
+  .model .what{font-size:15.5px}
+  .model .kills{font-size:14px;color:#7a5a2a;margin-top:8px}
+  .model .kills b{color:var(--ochre)}
+  .morebtn{margin-top:14px;background:none;border:1px dashed var(--ochre);color:var(--ochre);font-family:inherit;font-weight:700;border-radius:4px;padding:11px 18px;cursor:pointer;font-size:14.5px;width:100%}
+  .brief{background:#fdfcf8;border:1px solid var(--hairline);border-radius:6px;padding:22px;margin-top:10px;white-space:pre-wrap;font-size:15px;line-height:1.55;color:#3a332f}
+  .steps{margin-top:24px;background:var(--pine);color:var(--cream);border-radius:6px;padding:24px}
+  .steps h3{font-size:14px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:#d9a05c;margin-bottom:12px}
+  .steps ol{margin-left:20px}.steps li{margin:7px 0;font-size:15.5px}
+  .copied{color:var(--bush);font-weight:700;font-size:14px}
+  .section-label{font-size:13px;font-weight:900;letter-spacing:2px;color:var(--ochre);text-transform:uppercase;margin:30px 0 4px}
+  .note{background:#fff6e6;border:1px solid #e9d9b0;border-radius:4px;padding:10px 14px;font-size:13px;color:#7a5a2a;margin-top:20px}
+  .capture{margin-top:24px;background:var(--paper);border:1px solid var(--hairline);border-top:4px solid var(--ochre);border-radius:6px;padding:24px}
+  .capture h3{font-size:18px;font-weight:900;color:var(--pine);margin-bottom:6px}
+  .capture p{font-size:15px;margin-bottom:14px}
+  .capture input[type=text],.capture input[type=email]{width:100%;border:1px solid var(--hairline);border-radius:4px;padding:12px;font-family:inherit;font-size:16px;margin-bottom:10px;background:#fdfcf8}
+  .capture input:focus{outline:none;border-color:var(--ochre)}
+  .capture label{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;margin:6px 0 16px;cursor:pointer}
+  .capture label input{margin-top:4px}
+  .capdone{color:var(--bush);font-weight:700;margin-top:8px}
+  .caperr{color:var(--ochre);font-weight:700;font-size:14px;margin-top:6px;display:none}
+  footer{padding:26px 0;font-size:13px;color:#8a7f78;border-top:1px solid var(--hairline)}
+  a{color:inherit}
+</style>
+</head>
+<body>
+<header><div class="wrap"><span>CULTIVATE NATURE</span></div></header>
+<div class="stage"><div class="wrap">
+
+  <section id="landing">
+    <div class="eyebrow">The Nature Business Builder</div>
+    <h1>Make the place you love last.</h1>
+    <p class="sub">Nature in Australia runs on goodwill, and goodwill is running out. Answer ten questions and walk away with a brief that puts a real business model under the work. First, which of these is you?</p>
+    <div class="primary-doors" id="primaryDoors"></div>
+    <div class="more-line">
+      <button onclick="toggleMore()" id="moreBtn">If none of those fit, there are a few more situations →</button>
+      <div class="more-doors hidden" id="moreDoors"></div>
+    </div>
+    <div class="note">The models here are drawn from our library of nature business models.</div>
+  </section>
+
+  <section id="questions" class="hidden">
+    <button class="link" onclick="toLanding()">← Back to start</button>
+    <div class="q-card">
+      <div class="progress"><div class="bar" id="bar"></div></div>
+      <div class="qnum" id="qnum"></div>
+      <h2 id="qtext"></h2>
+      <textarea id="answer" placeholder="Your answer. A sentence or two is plenty."></textarea>
+      <div class="idk"><button onclick="idk()">I do not know yet</button></div>
+      <div class="req" id="req">This first one we do need, even just a few words.</div>
+      <div class="row">
+        <button class="btn ghost" id="backBtn" onclick="prevQ()">Back</button>
+        <button class="btn pine" id="nextBtn" onclick="nextQ()">Next</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="result" class="hidden">
+    <div class="eyebrow">Your brief is ready</div>
+    <h1>Here are ways this stands up.</h1>
+    <p class="sub">This is your situation, written so you can work it through. Underneath it is how we think: a nature venture needs a real business model, so donations and goodwill go further and the place can last.</p>
+    <div class="section-label">Ways this kind of venture actually stands up</div>
+    <div class="models" id="models"></div>
+    <button class="morebtn hidden" id="moreModelsBtn" onclick="showMoreModels()"></button>
+    <div class="models" id="moreModels" style="margin-top:14px"></div>
+    <div class="section-label">Your brief</div>
+    <div class="brief" id="brief"></div>
+    <div class="row">
+      <button class="btn pine" onclick="copyBrief()">Copy my brief</button>
+      <button class="btn ghost" onclick="downloadBrief()">Download it</button>
+      <span class="copied hidden" id="copied">Copied</span>
+    </div>
+    <div class="capture">
+      <h3>Want us to see it, and help?</h3>
+      <p>Share your brief with us. We help where we can, and we learn from what people bring so these ideas keep getting better. Your details stay with Cultivate Nature and go no further.</p>
+      <input type="text" id="capName" placeholder="Your name">
+      <input type="email" id="capEmail" placeholder="Your email">
+      <label><input type="checkbox" id="capConsent"> Send my brief to Cultivate Nature, and I am happy for them to contact me about it.</label>
+      <button class="btn pine" onclick="sendCapture()">Send to Cultivate Nature</button>
+      <div class="caperr" id="capErr">Pop in your email and tick the box, then we have got it.</div>
+      <div class="capdone hidden" id="capDone">We have opened an email to us with your brief in it. Hit send in your mail app and it is on its way, and your brief helps us make these ideas better.</div>
+    </div>
+    <div class="steps">
+      <h3>What to do with it</h3>
+      <ol>
+        <li>Read the options above. That is the start of the plan.</li>
+        <li>Copy the brief, or download it.</li>
+        <li>Paste it into the place you already go to think things through, and ask it to develop those options.</li>
+        <li>When you want a hand to actually build it, that is where we come in.</li>
+      </ol>
+    </div>
+    <div class="row" style="margin-top:26px">
+      <button class="btn ghost" onclick="toLanding()">Start again</button>
+    </div>
+    <div class="note">When you send your brief, it opens an email to us with your brief in it, ready for you to send. Your details stay with Cultivate Nature and go no further.</div>
+  </section>
+
+</div></div>
+<footer><div class="wrap">Cultivate Nature · Cultivating business models to support nature</div></footer>
+
+<script>
+const GENERAL_Q=["In a sentence, what are you trying to get standing?","What is already real, and what is still only a hope?","Who is it for?","What is already in your hands that this could be built from?","What is the biggest thing in the way?","What does good look like in a year?","What have you already tried?","Who else is involved?","What decision is sitting on your desk that you have not wanted to make?","If one thing changed, what would unlock the rest?"];
+// door codes: V venture, H handover, B business, S start, G grow, T time, O board, L land, F fund, N First Nations
+const CODE={venture:'V',handover:'H',business:'B',start:'S',grow:'G',time:'T',board:'O',land:'L',fund:'F',firstnations:'N'};
+const LIB={
+1:{t:"A paid after-dark experience",w:"A small-group guided night or dawn session at a premium.",k:"licensing, insurance, and after-hours staff cost.",d:"VGLO"},
+2:{t:"Pay to help with real science",w:"Visitors pay to join real survey, trapping or planting work.",k:"it only runs when fieldwork is scheduled, and ties up your leaders.",d:"VGBO"},
+3:{t:"Behind the scenes, led by trainees",w:"A premium look behind the fence, guided by young people in training.",k:"needs trained guides and safety supervision.",d:"VGN"},
+4:{t:"A combined ticket with a co-located operator",w:"An operator builds and runs an attraction inside your gate, one ticket, a share to you.",k:"planning consent, and an operator willing to fund and build it.",d:"VGTL"},
+5:{t:"An overnight immersion",w:"Dawn and dusk wildlife moments bundled with a bed on site.",k:"accommodation approval, and a new use can trigger an audit.",d:"VGL"},
+6:{t:"Room, site and location hire",w:"Weddings, retreats, meetings and filming in spaces you already have.",k:"irregular and thin unless someone actively markets it.",d:"VGT"},
+7:{t:"School excursions and holiday programs",w:"Curriculum-linked days and holiday activities, fees cover delivery.",k:"staffing, and clashing with a local who already runs them.",d:"VGSN"},
+8:{t:"Event hosting and overflow camping",w:"A festival runs from your site and pays hire, grounds used for camping.",k:"one-off seasonal income that needs an agreement.",d:"VGL"},
+9:{t:"Adopt a real animal, money tied to its care",w:"The public follows one named animal and funds its care, renewed yearly.",k:"the admin of updating every adopter, and churn.",d:"VFG"},
+10:{t:"Membership and an annual pass",w:"Locals buy a yearly pass, turning gate takings into recurring income.",k:"it needs a loyal local base and a reason to keep coming back.",d:"VG"},
+11:{t:"A regular giving club",w:"A monthly donor club tied to one clear, named outcome.",k:"acquisition cost and attrition; it needs a renewing story.",d:"VFO"},
+12:{t:"A legacy and bequest circle",w:"A named circle for people leaving a gift in their will.",k:"a long horizon with no near-term cash.",d:"VHF"},
+13:{t:"Sponsor a named asset",w:"A business or family funds one enclosure or habitat and is named on it.",k:"you run out of nameable assets, and naming can clash.",d:"VBF"},
+14:{t:"The collection or life list",w:"People log every species they meet, and the list brings them back.",k:"an empty list reads as homework.",d:"VGB"},
+15:{t:"Challenge and pledge fundraising",w:"Supporters take on a dare and raise money against it.",k:"it needs a crowd and a campaign, and spikes rather than recurs.",d:"VFS"},
+16:{t:"A corporate working day",w:"A company's staff do a day of real work, then a meal and a tour.",k:"it is supervised labour, so it pays only above the cost of running it.",d:"VBG"},
+17:{t:"A tiered corporate partnership",w:"Ongoing partners at set tiers of access, naming and reporting.",k:"slow relationship selling, and easy to over-promise.",d:"VBF"},
+18:{t:"A corporate leadership course",w:"A paid program helping a company's people build real nature projects.",k:"it needs a facilitator and live projects, and the sale is long.",d:"BOS"},
+19:{t:"A supply-in-kind partnership",w:"A supplier covers a running cost, food, fuel, legal, instead of cash.",k:"in-kind does not pay wages.",d:"VB"},
+20:{t:"Your expertise sold as a service",w:"Your specialists sell advice, training or accreditation to others.",k:"it competes for the expert hours the site itself needs.",d:"VGTO"},
+21:{t:"Your impact framework as the product",w:"Package your cost-per-outcome evidence and sell it to funders.",k:"measure honestly against a baseline, or the number is marketing.",d:"VFO"},
+22:{t:"Succession and transition advisory",w:"Help a founder hand on, with an all-options plan, led as succession.",k:"founders rarely say succession, so trust and timing decide.",d:"HVO"},
+23:{t:"A charity to charity transfer",w:"Where land sits in a trust, it passes charity to charity, not a sale.",k:"title is often unknown, and a trust can block a sale.",d:"HON"},
+24:{t:"Tourism covers the wildlife",w:"The commercial side runs to a floor that covers conservation, books open.",k:"if the commercial side dips, conservation is exposed.",d:"VHG"},
+25:{t:"Cultural owner, separate operator",w:"A community body owns and holds it, a separate operator runs the licensed work.",k:"the money must be solved before handing over a loss-maker.",d:"NHO"},
+26:{t:"Community ownership by co-op or crowdfund",w:"The town buys the asset through a co-operative or a crowdfund.",k:"it needs a trusted local lead and a real campaign.",d:"HSLN"},
+27:{t:"Founders in residence",w:"Founders get cheap space for a small share and mentoring your young people.",k:"it needs a convener and a flow of founders.",d:"VSG"},
+28:{t:"Nature stays and tiny houses",w:"Small-footprint accommodation that sells nights a place otherwise cannot.",k:"capital, accommodation approval, and often an audit.",d:"LVGS"},
+29:{t:"A shared bush-block succession",w:"A block passes into nature use, held and funded across several parties.",k:"structuring who holds what, and it stays a story until the vehicle is built.",d:"LHF"},
+30:{t:"Houses and worker beds on site",w:"Existing dwellings rented, including weekday worker beds.",k:"houses made fit to rent first, and ongoing tenancy management.",d:"LVT"},
+31:{t:"Donated stays as a charity demand engine",w:"A share of nights is donated to charities who earn a cut of bookings they refer.",k:"it needs booking volume and partner charities.",d:"LFB"},
+32:{t:"A farm buying into wildlife land",w:"A working farm takes threatened species onto its land as an asset and a brand.",k:"the landholder has to see nature as an asset, and the work needs real management.",d:"LBF"},
+33:{t:"A remediation levy that funds conservation",w:"Where ground is cleaned up, a per-tonne levy funds the conservation work.",k:"it needs tenure and processing, and margins are thin.",d:"LVO"},
+34:{t:"Remediation to unlock a land use",w:"Cleaning the ground buys the audit that lets a day site carry stays.",k:"the audit trigger and its cost, so the new use has to pay.",d:"LVG"},
+35:{t:"A cafe or shop as a training enterprise",w:"A genuinely good cafe and shop that trains and employs people.",k:"hospitality margin is brutal, so the surplus comes from training contracts.",d:"VSGB"},
+36:{t:"A social enterprise on the site's own work",w:"Nursery, husbandry and maintenance train a trading enterprise that employs people who need a start.",k:"it needs a provider of record and a supervisor, because it is a real business.",d:"VNS"},
+37:{t:"A native nursery shopfront",w:"Plants grown on site and sold, retail that is not another cafe.",k:"slow to build stock and a customer base, and seasonal.",d:"VSL"},
+38:{t:"Delivery paid by care systems",w:"The site hosts participants, paid by disability, aged care or justice funding.",k:"thin per-head rates, and staff must be free to deliver.",d:"VGN"},
+39:{t:"Made on site, and mobile catering",w:"Branded products and a food truck that travel to where the crowds are.",k:"production and food-safety overhead that only pays at volume.",d:"VGS"},
+40:{t:"Operator-run attraction seasons",w:"An operator brings the kit, cinema, rink, ropes, and pays you site hire.",k:"you need an operator to carry it, and a crowd.",d:"VGLT"},
+41:{t:"Turn love of a pet into support for nature",w:"Make someone a brilliant owner of the pet they love, then carry that love out to wildlife.",k:"the lever has to stay the pet, never a biodiversity statistic.",d:"BGF"},
+42:{t:"Co-own with the category leader",w:"Trade your platform for a partner's audience and co-own it, proven in a pilot.",k:"someone carries an unpaid pilot, and if it works must be defined up front.",d:"GBS"},
+43:{t:"Licence one partner per market",w:"Build once, then license the local version to one leader per region.",k:"keep the engine and the relationships, or the licensee rebuilds you.",d:"GB"},
+44:{t:"A content engine as the sticky layer",w:"Regular good content, including niche streaming, that brings people back inside a bigger tool.",k:"content alone is not sticky enough to be the whole product.",d:"GBV"},
+46:{t:"A platform that routes to events and suppliers",w:"Follow a user from a question to the right field day and supplier, who pay.",k:"it needs users and paying suppliers at once.",d:"BGO"},
+47:{t:"A local what's-on and discovery platform",w:"A region's events, profiles and stories under its own name, run by a local.",k:"it needs a committed local to keep it fed.",d:"SVB"},
+48:{t:"Put a business model under the giving",w:"A cause builds real trading revenue so donations stretch and it can stand.",k:"the trading arm must cover its costs, or it just adds risk.",d:"VHBSGTOLFN"},
+49:{t:"A founding donation that carries the build years",w:"One large gift locked in before you start, grants counted at zero.",k:"you need the gift up front, and honesty that grants may not come.",d:"VHF"},
+50:{t:"Fund the build from the body that needs it",w:"Plug into a partner or industry body that already has the audience or a levy.",k:"long approval cycles, and you give up control and a cut.",d:"SGO"},
+51:{t:"A charity share of revenue, baked in",w:"A stated, auditable share of revenue flows to conservation.",k:"the percentage has to be real and reported, or it reads as greenwash.",d:"BFV"},
+52:{t:"Those who benefit pay the land manager",w:"The parties who gain from a nature outcome pay those who deliver it.",k:"you need a credible measure and a payer who accepts the bill.",d:"LBO"},
+53:{t:"Become the standards body for your field",w:"Set the standard or badge and earn from membership and accreditation.",k:"authority has to be earned and defended, and it is slow.",d:"OVG"},
+54:{t:"The deeper program, where it gets built",w:"A serious venture gets built, their own setup around them and a weekly push until it saves real time.",k:"it only works if people follow the method and the push stays useful.",d:"VHBSGTOLFN"},
+55:{t:"Your idea built as an app",w:"A standalone app that does one job well for your audience.",k:"an app with no reason to reopen is dead weight; it needs a weekly job.",d:"SGB"},
+56:{t:"A supporter or partner portal",w:"A branded space where donors, partners or members see their impact and activity.",k:"it needs live data flowing in, or it is an empty shell.",d:"VFB"},
+57:{t:"A booking system built around your venture",w:"Bookings for visits, experiences and programs, built around how your place works.",k:"payment and capacity integration, and keeping it filled.",d:"VGT"},
+58:{t:"A marketplace for your niche",w:"An owned place where your audience buys, sells and connects, and you take a cut.",k:"the cold start, you need buyers and sellers at once.",d:"SGB"},
+59:{t:"Your own online shop",w:"Direct trade in the venture's own goods, plants, products and experiences.",k:"fulfilment, stock and postage overhead that only pays at volume.",d:"VGS"},
+60:{t:"A concierge trained on your venture",w:"An always-on assistant that answers questions in your voice, day and night.",k:"it has to be trained and kept current, or it gives wrong answers in your name.",d:"VTG"},
+61:{t:"A live impact dashboard",w:"A living dashboard showing what the venture is achieving in real time.",k:"it needs honest data plumbed in, and stale numbers are worse than none.",d:"OVF"},
+62:{t:"An automated content studio",w:"A system that turns each visit, photo or project into finished posts and case studies.",k:"it still needs raw material and a human eye for taste.",d:"VGT"},
+63:{t:"An agent-powered marketing engine",w:"Marketing that runs itself across channels, briefed by you.",k:"it amplifies a weak offer as fast as a strong one, so the offer must be right.",d:"GBT"},
+64:{t:"A supporter nurture engine",w:"Automated journeys that turn a one-time visitor into a repeat giver or member.",k:"it only works if there is something worth coming back for.",d:"VFG"},
+65:{t:"A members or community hub you own",w:"A place you own where your people connect, not a group on someone else's platform.",k:"communities need tending, so it dies without a host.",d:"VGN"},
+66:{t:"A spot on a shared network platform",w:"Take a branded place on a shared platform that already carries the audience.",k:"you are a tenant, so you live with the host's rules and economics.",d:"SVB"},
+67:{t:"Your knowledge sold as online courses",w:"Your expertise turned into courses people pay to take in their own time.",k:"completion rates are low and content dates, so it needs refreshing.",d:"VGO"},
+68:{t:"A book or documentary under your name",w:"A proper book or film that carries the venture's story and authority.",k:"production cost and time, and it earns reputation more than cash.",d:"VHO"},
+69:{t:"A regional natural-history archive",w:"The venture keeps a region's photos, records and stories, digitised and searchable.",k:"digitising is slow, and it needs a reason for people to use it.",d:"VON"},
+70:{t:"Carbon or biodiversity market participation",w:"Earn by generating and selling credits for the nature outcomes you deliver.",k:"measurement, verification and long lead times, and prices that move against you.",d:"LVO"},
+71:{t:"A paid conservation covenant",w:"Place a protective covenant on the title and be paid to lock the land to nature.",k:"it is permanent, so it suits only owners who want that, and the payment must be found.",d:"LHF"},
+72:{t:"A bequest-funded endowment",w:"Gifts in wills build a capital fund whose income funds operations in perpetuity.",k:"it takes decades to matter, and discipline not to spend the capital.",d:"VHF"},
+73:{t:"A social-impact loan or patient capital",w:"Take repayable but patient capital, paid back from your own revenue over a long horizon.",k:"it is still debt, so the revenue has to genuinely arrive.",d:"VSG"},
+74:{t:"A corporate offset or biodiversity marketplace",w:"Match companies that need nature outcomes to the projects that deliver them, for a fee.",k:"it needs trusted measurement and both supply and demand at once.",d:"BOG"},
+75:{t:"Sell biodiversity data for corporate disclosure",w:"Companies must disclose their nature impact; sell the monitoring data they need.",k:"the data has to be credible, and the disclosure rules are still settling.",d:"BOG"},
+76:{t:"Sponsor a hectare",w:"Donors fund the protection of land by the area, each gift tied to a measured patch.",k:"the land and the measure have to be real and reported.",d:"VFL"},
+77:{t:"A visitor conservation levy",w:"A small opt-out surcharge on every ticket flows to a named conservation fund.",k:"visitors resent a hidden add-on, so it has to be visible and optional.",d:"VFO"},
+78:{t:"A nature contribution at a partner's checkout",w:"A retail partner adds a round-up or plant-a-tree at its checkout, flowing to you.",k:"it depends entirely on the partner building it in and keeping it there.",d:"BFG"},
+79:{t:"Naming rights",w:"A sponsor buys the name of a building, trail, program or event for a term.",k:"it ties your brand to theirs, and the market for a big naming gift is small.",d:"VBF"},
+80:{t:"Brand licensing and a merchandise line",w:"License your name and story to product makers for a royalty, or run your own line.",k:"brand dilution on the wrong product, and merchandise ties up stock.",d:"VGB"},
+81:{t:"A licensed gift shop",w:"A retailer runs your shop under licence and pays you a royalty.",k:"you give up margin and control of the customer at the till.",d:"VTG"},
+82:{t:"A volunteer-to-member ladder",w:"A deliberate path that turns volunteers into paying members, donors and advocates.",k:"it needs someone to run the ladder, or volunteers stay volunteers.",d:"VFN"},
+83:{t:"A friends-of support group",w:"An arms-length group of supporters who raise money, volunteer and advocate.",k:"governance friction when the group's wishes drift from the venture's.",d:"VFO"},
+84:{t:"A wildlife-cam subscription",w:"Live cameras on the animals or habitat, as a paid subscription or a sponsor-funded feed.",k:"cameras and bandwidth cost money, and novelty fades without events to watch.",d:"VFB"},
+85:{t:"An education-content subscription for schools",w:"Curriculum-linked digital resources sold to schools as an annual subscription.",k:"schools buy slowly on tight budgets, and content must map to the curriculum.",d:"VGN"},
+86:{t:"A university research-partnership fee",w:"Universities and agencies pay to use your site, animals or data for research.",k:"research timelines are long and fees modest, and it can disrupt operations.",d:"VOL"},
+87:{t:"A crowd-science app",w:"The public records sightings and readings, which engages them and builds a dataset.",k:"it needs a crowd big enough to make the data real, and quality control.",d:"VBO"},
+88:{t:"A science kit or testing service",w:"Sell a kit or testing service, so people pay to run a piece of real science themselves.",k:"it needs a lab or processing chain behind it, and results people understand.",d:"VBL"},
+89:{t:"A conservation gap year or fellowship",w:"A paid immersive year that trains people deeply in one specialism while they do real work.",k:"it consumes a mentor's time, and needs people willing to pay.",d:"VSH"},
+90:{t:"A paid rehabilitation and release service",w:"You rehabilitate wildlife, and the referrer, a council, insurer or developer, pays per case.",k:"per-case income rarely covers the real cost, so the price must be honest.",d:"VOB"},
+91:{t:"Anchor-tenant an allied organisation",w:"Another conservation body rents space and runs its own work from your site.",k:"you take on a landlord's duties and a neighbour whose needs may not match.",d:"VTL"},
+92:{t:"A precinct pass across nearby attractions",w:"One pass covers your site and the attractions around it, with the takings shared.",k:"it needs the neighbours to agree and a fair way to split the money.",d:"VGB"},
+93:{t:"A shared commercial kitchen",w:"An approved kitchen you sell idle hours in, so local food makers pay to use it.",k:"food-safety compliance and scheduling, and the hours only sell if makers are near.",d:"VSG"},
+94:{t:"Venue as a service",w:"The venue productised as turnkey bookable infrastructure, with standard packages.",k:"turnkey means you carry the service load, so it has to be priced for that.",d:"VGT"},
+95:{t:"Revenue share with an inbound tour operator",w:"An operator brings groups on a schedule and shares revenue, so you get volume.",k:"you depend on their sales effort, and they own that customer.",d:"VGT"},
+96:{t:"A film-location agency",w:"Represent many nature sites to production companies for a fee on each booking.",k:"film work is irregular, so it works across a stable of sites, not one.",d:"VBT"},
+97:{t:"Paid nature-wellbeing sessions",w:"Guided forest-therapy and quiet-in-nature sessions sold to the public and workplaces.",k:"it needs a trained facilitator and a market that values it enough to pay.",d:"VBS"},
+98:{t:"Franchise your operating model",w:"The whole way the venture runs, packaged and licensed to other towns as a franchise.",k:"quality control across sites you do not run, and a model proven enough to copy.",d:"GHV"},
+99:{t:"A shared back office for small nature groups",w:"One team does the admin, compliance and fundraising for many small groups, who each pay.",k:"small groups have little to pay, so it works only at scale with light systems.",d:"VTO"}
+};
+
+const DOORS=[
+ {id:"venture",primary:true,who:"I run a nature venture",p:"A wildlife centre, park or project, and I want it to stand on its own.",ask:"a plan for making this venture stand on its own and last",
+  q:["What is the venture, in a sentence?","Who actually shows up today, and who do you wish would?","Do you know what a year of this takes to keep going, even roughly, or is that part of the fog?","Where does the money come from now, and which of those would you not survive without?","What do people love most about it?","What is the one thing that would break if the money stopped?","If people could pay for one thing you already do, or could do, what would they happily pay for?","What do you have that others do not?","What is the real thing stopping it from standing on its own: money, permission, people, or you?","In three years, what does this works look like on an ordinary Tuesday?"],
+  feat:[10,1,24,16]},
+ {id:"handover",primary:true,who:"I am handing it on",p:"I run something in nature and I need a way forward on ownership.",ask:"a succession path that protects what matters and sets up whoever takes it on",
+  q:["What are you handing on, in a sentence?","Why now, and what happens if you wait another year?","Is there a person, a group, or a kind of person you can already see taking it on? If not, say that.","What has to still be here after you go, even if the rest changes?","What is the hardest part of letting go?","Does it stand on its own financially today, or does it lean on you?","Who else depends on it?","What have you not written down that only you know?","A year after you have stepped back, what is still true that you care about, and what are you finally free of?","What is your timeline, and what forces it?"],
+  feat:[22,24,25,49]},
+ {id:"business",primary:true,who:"I am a business, and I want to work with nature",p:"I want a real way in, not a borrowed story.",ask:"a way for this business to work with nature that is real and that customers can see",
+  q:["What is the business, and what do you make or sell?","What happened that made nature your problem or your chance this year?","What do your customers already care about?","Where does money already leave the business that is meant to do some good, or be seen to?","What would your customers actually see, touch, or tell someone about?","What would make your customers proud to be part of it?","Have you tried a nature or cause partnership before? What happened?","What is the one outcome you would want to point to in a year?","What would make this feel real, not a logo on a website?","Who inside your business needs to believe in it?"],
+  feat:[16,17,51,13]},
+ {id:"start",primary:false,who:"I want to start something in nature",p:"I have an idea and want to get it going.",ask:"a plan to start this nature venture",q:GENERAL_Q,feat:[50,35,27,18]},
+ {id:"grow",primary:false,who:"I want to grow what I have",p:"It exists and I want it to go further.",ask:"a plan to grow this nature venture",q:GENERAL_Q,feat:[10,24,20,44]},
+ {id:"time",primary:false,who:"I want my time back",p:"I am stretched thin and need leverage.",ask:"a way to get my time back while the work keeps going",q:GENERAL_Q,feat:[60,20,94,30]},
+ {id:"board",primary:false,who:"I am on a charity or environmental business board",p:"I help steer it and want it to stand on its own and last.",ask:"how to help this organisation stand on its own",q:GENERAL_Q,feat:[48,22,53,50]},
+ {id:"land",primary:false,who:"I own or want a wildlife block",p:"I have land, or am looking to buy, and want it to work.",ask:"a way to make this land work for nature and for me",q:GENERAL_Q,feat:[28,29,32,71]},
+ {id:"fund",primary:false,who:"I want my giving to go further",p:"I fund or donate and want real, lasting impact.",ask:"how to make my funding go further and last",q:GENERAL_Q,feat:[48,49,51,76]},
+ {id:"firstnations",primary:false,who:"I am a First Nations group",p:"We care for Country and want to build on it.",ask:"a way to build this that stays in our hands",q:GENERAL_Q,feat:[25,36,65,38]}
+];
+
+let current=null,idx=0,answers=[];
+function doorModels(){var c=CODE[current.id];return Object.keys(LIB).map(Number).filter(n=>LIB[n].d.indexOf(c)!==-1);}
+function renderDoors(){
+  const pd=document.getElementById('primaryDoors');pd.innerHTML='';
+  const md=document.getElementById('moreDoors');md.innerHTML='';
+  DOORS.forEach(d=>{
+    if(d.primary){const b=document.createElement('button');b.className='door';b.innerHTML='<h3>'+d.who+'</h3><p>'+d.p+'</p>';b.onclick=()=>startDoor(d);pd.appendChild(b);}
+    else{const b=document.createElement('button');b.textContent=d.who;b.onclick=()=>startDoor(d);md.appendChild(b);}
+  });
+}
+function toggleMore(){document.getElementById('moreDoors').classList.toggle('hidden');document.getElementById('moreBtn').classList.toggle('hidden');}
+function show(id){['landing','questions','result'].forEach(s=>document.getElementById(s).classList.toggle('hidden',s!==id));window.scrollTo(0,0);}
+function startDoor(d){current=d;idx=0;answers=new Array(d.q.length).fill('');renderQ();show('questions');}
+function renderQ(){
+  const t=current.q.length;
+  document.getElementById('bar').style.width=(idx/t*100)+'%';
+  document.getElementById('qnum').textContent='Question '+(idx+1)+' of '+t;
+  document.getElementById('qtext').textContent=current.q[idx];
+  document.getElementById('answer').value=answers[idx]==='[I do not know yet]'?'':(answers[idx]||'');
+  document.getElementById('req').style.display='none';
+  document.getElementById('backBtn').style.visibility=idx===0?'hidden':'visible';
+  document.getElementById('nextBtn').textContent=idx===t-1?'Show my options':'Next';
+  document.getElementById('answer').focus();
+}
+function saveA(){const v=document.getElementById('answer').value.trim();if(v)answers[idx]=v;}
+function idk(){answers[idx]='[I do not know yet]';if(idx<current.q.length-1){idx++;renderQ();}else{finish();}}
+function nextQ(){
+  const v=document.getElementById('answer').value.trim();
+  if(idx===0&&!v&&answers[0]!=='[I do not know yet]'){document.getElementById('req').style.display='block';return;}
+  saveA();
+  if(idx<current.q.length-1){idx++;renderQ();}else{finish();}
+}
+function prevQ(){saveA();if(idx>0){idx--;renderQ();}}
+function toLanding(){show('landing');}
+function finish(){buildModels();buildBrief();show('result');}
+function modelCard(n){var m=LIB[n];var d=document.createElement('div');d.className='model';d.innerHTML='<h4>'+m.t+'</h4><div class="what">'+m.w+'</div><div class="kills"><b>What usually kills it:</b> '+m.k+'</div>';return d;}
+function buildModels(){
+  const el=document.getElementById('models');el.innerHTML='';
+  current.feat.forEach(n=>el.appendChild(modelCard(n)));
+  const rest=doorModels().filter(n=>current.feat.indexOf(n)===-1);
+  current._more=rest;
+  const more=document.getElementById('moreModels');more.innerHTML='';more.classList.add('hidden');
+  const btn=document.getElementById('moreModelsBtn');
+  if(rest.length){btn.classList.remove('hidden');btn.textContent='More ideas for you ('+rest.length+') →';}
+  else{btn.classList.add('hidden');}
+}
+function showMoreModels(){
+  const more=document.getElementById('moreModels');more.innerHTML='';
+  current._more.forEach(n=>more.appendChild(modelCard(n)));
+  more.classList.remove('hidden');
+  document.getElementById('moreModelsBtn').classList.add('hidden');
+}
+function buildBrief(){
+  let b="Here is who I am: "+current.who+". "+current.p+"\n\nHere is my situation.\n\n";
+  current.q.forEach((q,i)=>{const a=answers[i]?answers[i]:'[I did not answer this]';b+="• "+q+"\n  "+a+"\n\n";});
+  b+="Please help me build "+current.ask+".\n\n";
+  b+="Work from this: a nature venture needs a real business model underneath it, so donations and goodwill go further and the venture can stand on its own and last. Donations pay for the future, not the power bill.\n\n";
+  b+="Start with these ways this kind of venture actually stands up:\n";
+  current.feat.forEach((n,i)=>{var m=LIB[n];b+=(i+1)+". "+m.t+" ("+m.w+" What usually kills it: "+m.k+")\n";});
+  b+="\nBe honest about which to drop. Then give me practical next steps, the options worth weighing, and the questions I should be asking myself. Ask me about licences, land tenure, insurance, the founder as the business, and who takes it on if I cannot. Be specific and honest.";
+  document.getElementById('brief').textContent=b;
+}
+function sendCapture(){
+  const email=document.getElementById('capEmail').value.trim();
+  const consent=document.getElementById('capConsent').checked;
+  if(!email||!consent){document.getElementById('capErr').style.display='block';return;}
+  document.getElementById('capErr').style.display='none';
+  // Learning loop: opens an email to Cultivate Nature with the brief in it. No backend needed.
+  const name=document.getElementById('capName').value.trim();
+  const brief=document.getElementById('brief').textContent;
+  const subject='The Nature Business Builder — '+(name||current.who);
+  const body='Name: '+(name||'(not given)')+'\nEmail: '+email+'\nSituation: '+current.who+'\n\n--- My brief ---\n\n'+brief;
+  const href='mailto:sam@cultivatenature.au?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  window.location.href=href;
+  document.getElementById('capDone').classList.remove('hidden');
+  document.getElementById('capConsent').closest('.capture').querySelector('button.btn').style.display='none';
+}
+function copyBrief(){navigator.clipboard.writeText(document.getElementById('brief').textContent).then(()=>{const c=document.getElementById('copied');c.classList.remove('hidden');setTimeout(()=>c.classList.add('hidden'),2000);});}
+function downloadBrief(){const blob=new Blob([document.getElementById('brief').textContent],{type:'text/plain'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='my-cultivate-nature-brief.txt';a.click();}
+document.getElementById('answer').addEventListener('keydown',e=>{if(e.key==='Enter'&&(e.metaKey||e.ctrlKey))nextQ();});
+renderDoors();
+</script>
+</body>
+</html>
