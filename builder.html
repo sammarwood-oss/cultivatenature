@@ -258,7 +258,7 @@ const DOORS=[
   q:["What is the venture, in a sentence?","Who actually shows up today, and who do you wish would?","Do you know what a year of this takes to keep going, even roughly, or is that part of the fog?","Where does the money come from now, and which of those would you not survive without?","What do people love most about it?","What is the one thing that would break if the money stopped?","If people could pay for one thing you already do, or could do, what would they happily pay for?","What do you have that others do not?","What is the real thing stopping it from standing on its own: money, permission, people, or you?","In three years, what does this works look like on an ordinary Tuesday?"],
   feat:[10,1,24,16]},
  {id:"handover",primary:true,who:"I am handing it on",p:"I run something in nature and I need a way forward on ownership.",ask:"a succession path that protects what matters and sets up whoever takes it on",
-  q:["What are you handing on, in a sentence?","Why now, and what happens if you wait another year?","Is there a person, a group, or a kind of person you can already see taking it on? If not, say that.","What has to still be here after you go, even if the rest changes?","What is the hardest part of letting go?","Does it stand on its own financially today, or does it lean on you?","Who else depends on it?","What have you not written down that only you know?","A year after you have stepped back, what is still true that you care about, and what are you finally free of?","What is your timeline, and what forces it?"],
+  q:["What are you handing on, in a sentence?","Why now, and what happens if you wait another year?","Is there a person, a group, or a kind of person you can already see taking it on? If not, say that.","What has to still be here after you go, even if the rest changes?","What is the hardest part of letting go?","Does it stand on its own financially today, or does it lean on you?","Who else depends on it?","What does this place rely on that lives only in your head?","A year after you have stepped back, what is still true that you care about, and what are you finally free of?","What is your timeline, and what forces it?"],
   feat:[22,24,25,49]},
  {id:"business",primary:true,who:"I am a business, and I want to work with nature",p:"I want a real way in, not a borrowed story.",ask:"a way for this business to work with nature that is real and that customers can see",
   q:["What is the business, and what do you make or sell?","What happened that made nature your problem or your chance this year?","What do your customers already care about?","Where does money already leave the business that is meant to do some good, or be seen to?","What would your customers actually see, touch, or tell someone about?","What would make your customers proud to be part of it?","Have you tried a nature or cause partnership before? What happened?","What is the one outcome you would want to point to in a year?","What would make this feel real, not a logo on a website?","Who inside your business needs to believe in it?"],
@@ -325,13 +325,19 @@ function showMoreModels(){
   document.getElementById('moreModelsBtn').classList.add('hidden');
 }
 function buildBrief(){
-  let b="Here is who I am: "+current.who+". "+current.p+"\n\nHere is my situation.\n\n";
-  current.q.forEach((q,i)=>{const a=answers[i]?answers[i]:'[I did not answer this]';b+="• "+q+"\n  "+a+"\n\n";});
-  b+="Please help me build "+current.ask+".\n\n";
-  b+="Work from this: a nature venture needs a real business model underneath it, so donations and goodwill go further and the venture can stand on its own and last. Donations pay for the future, not the power bill.\n\n";
-  b+="Start with these ways this kind of venture actually stands up:\n";
-  current.feat.forEach((n,i)=>{var m=LIB[n];b+=(i+1)+". "+m.t+" ("+m.w+" What usually kills it: "+m.k+")\n";});
-  b+="\nBe honest about which to drop. Then give me practical next steps, the options worth weighing, and the questions I should be asking myself. Ask me about licences, land tenure, insurance, the founder as the business, and who takes it on if I cannot. Be specific and honest.";
+  const opener=(answers[0] && answers[0]!=='[I do not know yet]')?answers[0]:current.p;
+  let b="I am going to give you my situation. I want you to do two things.\n\n";
+  b+="First, read my situation back to me as a short, honest story, in your own words, with a little creative licence, so I can see where I really stand. Do not just repeat my answers.\n\n";
+  b+="Then help me build "+current.ask+".\n\n";
+  b+="--- My situation (raw notes, for you to work from) ---\n\n";
+  b+="Who I am: "+current.who+". "+current.p+"\n\n";
+  b+="In my own words: "+opener+"\n\n";
+  current.q.forEach((q,i)=>{if(i===0)return;const a=answers[i]?answers[i]:'[I did not answer this]';b+=q+"\n"+a+"\n\n";});
+  b+="--- How to help me ---\n\n";
+  b+="Work from this: a nature venture needs a real business model underneath it, so donations and goodwill go further and it can stand on its own and last. Donations pay for the future, not the power bill.\n\n";
+  b+="Here are ways a venture like mine can actually stand up. Start with these, and tell me honestly which to drop:\n";
+  current.feat.forEach((n,i)=>{var m=LIB[n];b+=(i+1)+". "+m.t+" — "+m.w+" What usually kills it: "+m.k+"\n";});
+  b+="\nThen give me practical next steps, the options worth weighing, and the questions I should be asking myself, about licences, land, insurance, whether the venture leans too much on me, and who takes it on if I step back. Be specific and honest, and talk to me like a person, not a form.";
   document.getElementById('brief').textContent=b;
 }
 function sendCapture(){
