@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cultivate Nature</title>
-<meta name="description" content="Cultivating business models to support nature. Led by Sam Marwood. We help nature ventures become profitable and sustainable, and we are the concierge into nature for business.">
+<meta name="description" content="Cultivating business models to support nature. We help nature ventures become profitable and sustainable, and we help businesses put real nature programs to work.">
 <link rel="icon" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" sizes="192x192" href="assets/favicon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,9 +30,9 @@
   .brandline span { font-weight:900; letter-spacing:2.5px; font-size:17px; color:var(--charcoal); }
 
   .hero { text-align:center; padding:72px 0 88px 0; }
-  .hero img { width:min(440px, 84vw); }
+  .hero img { width:min(176px, 40vw); }
   .hero h1 { font-size:clamp(28px, 5vw, 50px); font-weight:900; color:var(--pine); letter-spacing:-0.5px; margin-top:34px; line-height:1.12; }
-  .hero p.sub { max-width:660px; margin:22px auto 0 auto; font-size:clamp(17px,2.4vw,21px); font-weight:500; }
+  .hero p.sub { max-width:680px; margin:22px auto 0 auto; font-size:clamp(17px,2.4vw,21px); font-weight:500; }
 
   .statement { background:var(--pine); color:var(--cream); text-align:center; padding:60px 20px; }
   .statement p { font-size:clamp(24px,4vw,40px); font-weight:900; letter-spacing:-0.5px; }
@@ -56,6 +56,11 @@
   .how-grid p { font-size:16px; }
   @media (max-width:800px) { .how-grid { grid-template-columns:1fr; gap:28px; } }
 
+  .focus-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:34px 44px; margin-top:12px; }
+  .focus-grid h3 { font-size:17px; font-weight:900; color:var(--pine); margin-bottom:8px; }
+  .focus-grid p { font-size:15.5px; }
+  @media (max-width:800px) { .focus-grid { grid-template-columns:1fr; gap:26px; } }
+
   .sam { display:grid; grid-template-columns:320px 1fr; gap:56px; align-items:center; }
   .sam img { width:100%; display:block; }
   .sam h2 { margin-bottom:14px; }
@@ -73,7 +78,7 @@
   .ask { background:var(--pine); color:var(--cream); text-align:center; padding:84px 0; }
   .ask img { width:min(250px,60vw); margin-bottom:30px; }
   .ask h2 { color:#d9a05c; }
-  .ask p.big { font-size:clamp(21px,3.4vw,30px); font-weight:700; max-width:760px; margin:0 auto; }
+  .ask p.big { font-size:clamp(24px,3.6vw,34px); font-weight:900; max-width:760px; margin:0 auto; letter-spacing:-0.5px; }
   .ask p.small { margin:22px auto 0 auto; max-width:660px; font-size:16.5px; }
   .ask a { display:inline-block; margin-top:34px; background:var(--cream); color:var(--pine); font-weight:900; letter-spacing:1px; padding:16px 38px; text-decoration:none; }
 
@@ -93,7 +98,7 @@
 <div class="hero wrap">
   <img src="assets/mark.png" alt="A tree growing from desert, bush and water">
   <h1>Cultivating business models<br>to support nature.</h1>
-  <p class="sub">Nature in Australia runs on goodwill, and goodwill is running out. We put real business models underneath the people and places doing the work.</p>
+  <p class="sub">Nature in Australia runs on goodwill, and goodwill is running out. We help the people and places doing the work put a business underneath it, so it can stand on its own and last.</p>
   <a href="builder.html" style="display:inline-block;margin-top:34px;background:var(--pine);color:var(--cream);font-weight:900;letter-spacing:1px;padding:17px 40px;text-decoration:none;border-radius:4px;">Build your plan, free</a>
   <p style="margin-top:14px;font-size:15px;color:#8a7f78;">Answer ten questions, walk away with a brief for your nature venture.</p>
 </div>
@@ -104,12 +109,12 @@
 
 <section>
   <div class="wrap">
-    <h2>What we do</h2>
-    <p class="lead">We help nature ventures transition to being profitable and sustainable. We get in and share the risk and the reward.</p>
+    <h2>Who we help</h2>
+    <p class="lead">We help nature ventures become profitable and sustainable, and we help businesses put real nature programs to work. We get in, and we share the risk and the reward.</p>
     <div class="offers">
       <div>
         <h3>For business</h3>
-        <p>We are your concierge into nature. Real programs, real places and real outcomes your customers can see, built from budgets you already spend.</p>
+        <p>We are your concierge into nature. You choose the areas you work in with us, the tech and platforms, the marketing, the giving, the products, all from budgets you already spend, and we design and run the programs inside them.</p>
       </div>
       <div>
         <h3>For nature ventures</h3>
@@ -148,13 +153,27 @@
 </section>
 
 <section class="band-line">
+  <div class="wrap">
+    <h2>What we are good at</h2>
+    <p class="lead">The same strengths sit behind every venture, and we bring them to any company that wants to work with nature.</p>
+    <div class="focus-grid">
+      <div><h3>Tech and platforms</h3><p>The apps, platforms and tools a nature program needs to run.</p></div>
+      <div><h3>Marketing and reach</h3><p>Carrying a real nature story to the people who should hear it.</p></div>
+      <div><h3>Giving and foundations</h3><p>A real wildlife partner, with the impact measured and shown.</p></div>
+      <div><h3>Products and partnerships</h3><p>Commercial programs that are good for nature and good for business.</p></div>
+      <div><h3>Tourism and stays</h3><p>Experiences and places that bring people to nature and fund it.</p></div>
+      <div><h3>Land and succession</h3><p>Making land work for nature, and handing ownership on well.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band-line">
   <div class="wrap sam">
     <img src="assets/sam.jpg" alt="Sam Marwood">
     <div>
       <h2>Who we are</h2>
       <div class="name">Led by Sam Marwood.</div>
       <p>Sam has spent twenty years making the ventures people love stand on their own, across farming, conservation and technology. He knows what it takes to get nature businesses on track, and he leads a team that gets in, shares the risk, and stays for the long run.</p>
-      <p style="margin-top:14px;">First Nations partnership is part of how we work, not an add on.</p>
     </div>
   </div>
 </section>
@@ -163,11 +182,12 @@
   <div class="wrap">
     <h2>What we are building</h2>
     <ul>
-      <li class="b"><strong>Super Paw.</strong> A pet platform that turns love of animals into support for nature.</li>
-      <li class="d"><strong>Edge Pledge.</strong> Challenge fundraising that rallies people and business behind nature.</li>
+      <li class="b"><strong>Super Paw.</strong> A pet platform that turns love of animals into real support for wildlife.</li>
+      <li class="d"><strong>The Timber.</strong> A range of eucalypt spirits where a First Nations group chooses the trees, so every bottle sends money back to the land.</li>
       <li class="w"><strong>HiDE.</strong> Nature stays, where the visit funds the place.</li>
       <li class="b">Wildlife parks finding their future, with the business plan, the partners and a way forward. We work in the background alongside them.</li>
-      <li class="d">New ways for people to share in caring for a piece of nature together.</li>
+      <li class="d">New ways for families to share in caring for a piece of bush together, so land one person could never hold stays wild and looked after.</li>
+      <li class="w">We support ARCC, the people who rescue and rehabilitate eagles, falcons and owls, so the care that keeps them flying can stand on its own.</li>
     </ul>
   </div>
 </section>
@@ -176,8 +196,9 @@
   <div class="wrap">
     <h2>What we are thinking about</h2>
     <ul>
-      <li class="w">Backing the vets who treat injured wildlife for free, and the hospitals and rescue centres that could carry it.</li>
-      <li class="b">Keeping wildlife off the roads, paid for by the people who save when the collisions stop.</li>
+      <li class="w">Backing the vets who treat injured wildlife for free, and the recognition and the fund that lets them keep doing it.</li>
+      <li class="b">Keeping wildlife off the roads, paid for by the people who save money when the collisions stop.</li>
+      <li class="d">Turning a place of incarceration into a place of second chances, where people, land and wildlife all get another start.</li>
     </ul>
   </div>
 </section>
@@ -185,8 +206,8 @@
 <section class="ask">
   <div class="wrap">
     <img src="assets/mark-keyline.png" alt="">
-    <h2>Who we work with</h2>
-    <p class="big">Bring us your venture, or bring us your company.</p>
+    <h2>Work with us</h2>
+    <p class="big">Partner with us to cultivate nature.</p>
     <p class="small">If you run a nature venture that deserves a future, or a business that wants a real way into nature instead of a borrowed story, we would love to talk.</p>
     <a href="mailto:sam@cultivatenature.au">Talk to Sam Marwood</a>
   </div>
